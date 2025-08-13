@@ -37,25 +37,25 @@
 
         <ul class="list-unstyled components">
           <li class="active">
-            <a href="1.html"
+            <a href="1.php"
               ><i class="fas fa-home"></i>
               <span class="menu-text">Dashboard</span></a
             >
           </li>
           <li>
-            <a href="3.html"
+            <a href="3.php"
               ><i class="fas fa-shopping-cart"></i>
               <span class="menu-text">Commandes</span></a
             >
           </li>
           <li>
-            <a href="4.html"
+            <a href="4.php"
               ><i class="fas fa-capsules"></i>
               <span class="menu-text">Medicament</span></a
             >
           </li>
           <li>
-            <a href="2.html"
+            <a href="2.php"
               ><i class="fas fa-users"></i>
               <span class="menu-text">Utilisation</span></a
             >
@@ -67,7 +67,7 @@
             >
           </li>
           <li>
-            <a href="5.html"
+            <a href="5.php"
               ><i class="fas fa-cog"></i>
               <span class="menu-text">Paramètres</span></a
             >
