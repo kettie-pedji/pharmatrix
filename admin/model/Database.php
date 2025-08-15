@@ -26,7 +26,7 @@ class Database{
         return $this->pdo;
     }
 
-    // definit le mode de recuperation
+    //  preparer et executer les informations dans la base de donnee
     public function prepare($sql, $params=null) {
         $req= $this->getConnect()->prepare($sql);
         if(is_null($params)){
@@ -37,7 +37,7 @@ class Database{
         }
         return $req;
     }
-// recuperer les information
+// recuperer les information dans la base de donnee
     public function getData($req, $one=true) {
         if($one == true){
             $datas= $req->fetch();
