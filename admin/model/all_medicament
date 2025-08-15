@@ -1,0 +1,47 @@
+<?php
+require_once 'Database.php';
+
+class UsersDB {
+    private $db;
+    private $tablename;
+    private $tableid;
+
+    public function __construct() {
+        $this->db = new Database();
+        $this->tablename = 'all_medicament';
+        $this->tableid = 'all_medicament_id';
+    }
+
+    public function create($name, $description){
+        $sql="insert into $this->tablename set name=?, description=?";
+        $params= array ($name, $description);
+        $this->db->prepare($sql, $params);
+    }
+
+    public function update($name, $description){
+        $sql="update  $this->tablename set name=?, description=? where $this->tableid=?";
+        $params= array ($name, $description, $id);
+        $this->db->prepare($sql, $params);
+    }
+
+    public function delete($id){
+        $sql="delete from $this->tablename where $this->tableid=?";
+        $params= array ($id);
+        $this->db->prepare($sql, $params);
+    }
+
+    public function read($id){
+        $sql="select * from $this->tablename where $this->tableid=?";
+        $params= array ($id);
+        $this->db->prepare($sql, $params);
+        return $this->db->getDatas($req, true);
+    }
+
+    public function readAll(){
+        $sql="select * from $this->tablename order by $this->tableid=?";
+        $params= null;
+        $this->db->prepare($sql, $params);
+        return $this->db->getDatas($sql, false);
+    }
+}
+?>

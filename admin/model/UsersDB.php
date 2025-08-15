@@ -38,9 +38,17 @@ class UsersDB {
     }
 
     public function readAll(){
-        $sql="select * from $this->tablename order by $this->tableid desc";
+        $sql="select * from $this->tablename order by $this->tableid=?";
+        $params= null;
+        $this->db->prepare($sql, $params);
+        return $this->db->getDatas($sql, false);
+    }
+
+    public function readConnexion($email, $password){
+        $sql="select * from $this->tablename where email=?, and password=?";
         $params= array ($id);
         $this->db->prepare($sql, $params);
+        return $this->db->getDatas($sql, true);
     }
 }
 ?>
